@@ -1,0 +1,28 @@
+{
+    "modules": [
+        {
+            "src": "article/edit",
+            "dest": "article"
+        },
+        {
+            "src": "article/index",
+            "dest": "article"
+        },
+        {
+            "src": "auth/login",
+            "dest": "auth"
+        },
+        {
+            "src": "home/index",
+            "dest": "home"
+        },
+        {
+            "src": "role/user/edit",
+            "dest": "role/user"
+        },
+        {
+            "src": "role/user/index",
+            "dest": "role/user"
+        }
+    ]
+}

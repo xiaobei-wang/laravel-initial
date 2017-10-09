@@ -1,0 +1,111 @@
+[type='text'] {
+  margin: 0;
+}
+
+.wrapper-box {
+  text-align: center;
+  width: 100%;
+  padding: 20px 20px 0 20px;
+  min-height: 50px;
+  margin: 0 auto;
+}
+
+.content-box {
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  padding: 0 12px 50px;
+}
+
+.button-box {
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+}
+
+.add-btn {
+  background-color: #7cbde2;
+  margin-right: 15px;
+  float: right;
+}
+
+.add-btn:hover {
+  color: #fff;
+  background-color: #73cde8;
+}
+
+.search-box {
+  text-align: center;
+  width: 100%;
+  min-height: 50px;
+  margin: 20px auto 0;
+  border: #ddd solid 1px;
+  border-radius: 5px;
+  display: block;
+  padding: 20px;
+}
+
+.search-box .row {
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+
+.search-box .btn {
+  text-align: center;
+  width: 122px;
+  color: #fff;
+  background: #f4c044;
+  border-radius: 4px;
+  outline: none;
+}
+
+.search-box .btn-info {
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+.table-box {
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+  min-height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table {
+  border-collapse: collapse;
+  margin-bottom: 1.25rem;
+  table-layout: auto;
+}
+
+.table thead tr th,
+.table thead tr td,
+.table tbody tr th,
+.table tbody tr td {
+  vertical-align: middle;
+  font-size: 14px;
+  text-align: center;
+  padding: 5px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.table tbody tr:hover {
+  background-color: #fff9eb;
+}
+
+.table tbody {
+  border: none;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.table tbody tr {
+  border-top: 1px solid #dcdcdc;
+  color: #666;
+  font-size: 14px;
+}
+
+.error-alert {
+  color: red;
+}
