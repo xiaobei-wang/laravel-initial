@@ -5,7 +5,7 @@ namespace App\Admin\Http\Controllers\Api;
 use App\Admin\Http\Controllers\BaseController;
 use App\Admin\Src\Forms\Article\ArticleStoreForm;
 use App\Src\Article\Infra\Repository\ArticleRepository;
-use App\Web\Src\Forms\Article\ArticleDeleteForm;
+use App\Admin\Src\Forms\Article\ArticleDeleteForm;
 use Illuminate\Http\Request;
 
 class ArticleController extends BaseController

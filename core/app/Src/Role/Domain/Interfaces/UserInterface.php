@@ -60,9 +60,4 @@ interface UserInterface extends Repository
      * @return UserEntity|null
      */
     public function getUserById($id);
-
-    /**
-     * @param  int $id
-     */
-    public function updateUploadNum($id);
 }

@@ -52,7 +52,7 @@ $url_name = request()->route()->getName();
                 <ul class="treeview-menu">
                     <li @if(in_array($url_name,$menus['文章管理']['文章列表']) ) class="active" @endif>
                         <a href="{{route('article.index')}}">
-                            <i class="fa fa-circle-o"></i> 用户管理
+                            <i class="fa fa-circle-o"></i> 文章列表
                         </a>
                     </li>
                 </ul>

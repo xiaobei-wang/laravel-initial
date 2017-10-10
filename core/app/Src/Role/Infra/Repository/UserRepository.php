@@ -36,9 +36,6 @@ class UserRepository extends Repository implements UserInterface
                 'email'           => $user_entity->email,
                 'phone'           => $user_entity->phone,
                 'status'          => $user_entity->status,
-                'type'            => $user_entity->type,
-                'upload_number'   => $user_entity->upload_number,
-                'created_user_id' => $user_entity->created_user_id,
             ]
         );
         $model->save();
@@ -283,19 +280,5 @@ class UserRepository extends Repository implements UserInterface
             return null;
         }
         return $this->reconstituteFromModel($model);
-    }
-
-
-    /**
-     * @param  int $id
-     */
-    public function updateUploadNum($id)
-    {
-        /** @var UserEntity $entity */
-        $entity = $this->fetch($id);
-        if (isset($entity)) {
-            $entity->upload_number = $entity->upload_number + 1;
-            $this->save($entity);
-        }
     }
 }

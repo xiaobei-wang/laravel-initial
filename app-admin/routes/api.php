@@ -20,4 +20,9 @@ Route::group([], function () {
     Route::post('/article/update/{id}', ['as' => 'api.article.update', 'uses' => 'Api\ArticleController@update']);
     Route::post('/article/delete/{id}', ['as' => 'api.article.delete', 'uses' => 'Api\ArticleController@delete']);
     Route::post('/article/img/image-upload', ['as' => 'api.article.image-upload', 'uses' => 'Api\ArticleController@imageUpload']);
+
+    //  用户管理路由
+    Route::post('/role/user/store/{id}', ['as' => 'api.role.user.store', 'uses' => 'Api\Role\UserController@store']);
+    Route::post('/role/user/update/{id}', ['as' => 'api.role.user.update', 'uses' => 'Api\Role\UserController@update']);
+    Route::post('/role/user/delete/{id}', ['as' => 'api.role.user.delete', 'uses' => 'Api\Role\UserController@delete']);
 });

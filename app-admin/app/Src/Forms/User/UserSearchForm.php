@@ -1,12 +1,12 @@
 <?php
-namespace App\Admin\Src\Forms\Article;
+namespace App\Admin\Src\Forms\User;
 
 use App\Admin\Src\Forms\Form;
-use App\Src\Article\Domain\Model\ArticleSpecification;
+use App\Src\Role\Domain\Model\UserSpecification;
 
-class ArticleSearchForm extends Form
+class UserSearchForm extends Form
 {
-    public $article_specification;
+    public $user_specification;
 
     /**
      * Get the validation rules.
@@ -37,8 +37,8 @@ class ArticleSearchForm extends Form
 
     public function validation()
     {
-        $this->article_specification = new ArticleSpecification();
-        $this->article_specification->keyword = array_get($this->data, 'keyword');
+        $this->user_specification = new UserSpecification();
+        $this->user_specification->keyword = array_get($this->data, 'keyword');
     }
 
 }

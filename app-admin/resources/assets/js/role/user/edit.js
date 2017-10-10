@@ -51,7 +51,7 @@ $(function () {
                     setTimeout(skipUpdate, 2000);
                     function skipUpdate() {
                         $successPop.closePop();
-                        window.location.href = '/role/user/edit/' + data.id;
+                        window.location.href = '/role/user/index';
                     }
                 },
                 errFn: function (data, status, xhr) {
@@ -73,7 +73,7 @@ $(function () {
                     setTimeout(skipUpdate, 2000);
                     function skipUpdate() {
                         $successPop.closePop();
-                        window.location.reload();
+                        window.location.href = '/role/user/index';
                     }
                 },
                 errFn: function (data, status, xhr) {

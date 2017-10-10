@@ -64,8 +64,9 @@ ufa()->extJs([
                         <th width="10%">账号</th>
                         <th width="20%">公司名称</th>
                         <th width="15%">职位</th>
-                        <th width="20%">姓名</th>
+                        <th width="10%">姓名</th>
                         <th width="10%">手机号</th>
+                        <th width="10%">邮箱</th>
                         <th width="10%">用户角色</th>
                         <th width="10%">操作</th>
                     </tr>
@@ -79,18 +80,19 @@ ufa()->extJs([
                             <td>{{$item['position'] or ''}}</td>
                             <td>{{$item['name'] or ''}}</td>
                             <td>{{$item['phone'] or ''}}</td>
+                            <td>{{$item['email'] or ''}}</td>
                             <td>{{$item['roles'][0]['name'] or ''}}</td>
                             <td>
                                 <a title="编辑" class="icon-edit"
                                    href="{{route('role.user.edit',['id'=>$item['id'] ?? 0])}}">
-                                    <i class="iconfont">&#xe626;</i>
+                                    <i class="iconfont">编辑</i>
                                 </a>
                                 <a title="删除" class="delete" data-id="{{$item['id']}}">
-                                    <i class="iconfont">&#xe601;</i>
+                                    <i class="iconfont">删除</i>
                                 </a>
                                 <a title="密码重置" class="icon-edit"
                                    href="{{route('role.user.set-password',['id'=>$item['id'] ?? 0])}}">
-                                    <i class="iconfont">&#xe739;</i>
+                                    <i class="iconfont">密码重置</i>
                                 </a>
                             </td>
                         </tr>

@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Admin\Src\Forms\Article;
+namespace App\Admin\Src\Forms\User;
 
-
-use App\Src\Article\Infra\Repository\ArticleRepository;
 use App\Admin\Src\Forms\Form;
 
-class ArticleDeleteForm extends Form
+class UserDeleteForm extends Form
 {
     public $id;
 

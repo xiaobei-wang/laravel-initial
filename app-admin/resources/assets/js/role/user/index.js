@@ -38,7 +38,7 @@ $(function () {
     // 确定
     $(document).on('click', '#dialog_confirm', function () {
         var opt = {data: {}};
-        service.roleUserDelete({
+        service.delete({
             data: {id: data_id},
             sucFn: function (data, status, xhr) {
                 $confirmPop.closePop();

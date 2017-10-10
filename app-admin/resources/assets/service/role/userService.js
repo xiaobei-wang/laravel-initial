@@ -1,7 +1,7 @@
 module.exports = (function () {
 
     var _store = function store(opts) {
-        ajax({
+        $.http({
             type: 'POST',
             url: '/api/role/user/store/' + opts.params.id,
             data: opts.data,
@@ -13,7 +13,7 @@ module.exports = (function () {
     };
 
     var _update = function update(opts) {
-        ajax({
+        $.http({
             type: 'POST',
             url: '/api/role/user/update/' + opts.params.id,
             data: opts.data,
@@ -24,20 +24,20 @@ module.exports = (function () {
         });
     };
 
-    var _roleUserDelete = function (opts) {
+    var _delete = function (opts) {
         $.http({
             type: 'POST',
             dataType: 'json',
             url: '/api/role/user/delete/' + opts.data.id,
             data: opts.data,
-            success: opts.success,
-            error: opts.error
+            success: opts.sucFn,
+            error: opts.errFn
         });
     };
 
     return {
         store: _store,
         update: _update,
-        roleUserDelete: _roleUserDelete
+        delete: _delete
     };
 })();
