@@ -1,0 +1,39 @@
+@import "../../../common/confirm-pop";
+@import "../../../common/prompt-pop";
+@import "../../../common/loading-pop";
+@import "../../../common/common-edit";
+
+.category {
+  width: 78%;
+  margin-left: 15px;
+  padding-top: 20px;
+  height: 200px;
+  overflow: hidden;
+  overflow-y: auto;
+  border: 1px solid #d9d9d9;
+}
+
+.category-container {
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.category-item {
+  margin-left: 20px;
+  height: auto;
+  overflow: hidden;
+}
+
+.category span {
+  float: left;
+  margin-right: 30px;
+}
+
+.category-item label {
+  font-weight: normal;
+}
+
+.form-error {
+  margin-left: 19%;
+}

@@ -74,7 +74,7 @@ class ArticleRepository extends Repository implements ArticleInterface
         if ($spec->keyword) {
             $builder->where('title', 'like', '%' . $spec->keyword . '%');
         }
-        $builder->orderBy('id', 'desc');
+        $builder->orderBy('articles.id', 'desc');
         if ($spec->page) {
             $paginator = $builder->paginate($per_page, ['*'], 'page', $spec->page);
         } else {

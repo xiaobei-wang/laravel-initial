@@ -5,6 +5,10 @@ $menus = [
             'role.user.index',
             'role.user.edit'
         ],
+        '角色管理' => [
+            'role.role.index',
+            'role.role.edit'
+        ]
     ],
     '文章管理' => [
         '文章列表' => [
@@ -38,8 +42,8 @@ $url_name = request()->route()->getName();
                             <i class="fa fa-circle-o"></i> 用户管理
                         </a>
                     </li>
-                    <li>
-                        <a href="/admin/roles">
+                    <li @if(in_array($url_name,$menus['系统管理']['角色管理']) ) class="active" @endif>
+                        <a href="{{route('role.role.index')}}">
                             <i class="fa fa-circle-o"></i> 角色管理
                         </a>
                     </li>

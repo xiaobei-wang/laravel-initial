@@ -25,4 +25,9 @@ Route::group([], function () {
     Route::post('/role/user/store/{id}', ['as' => 'api.role.user.store', 'uses' => 'Api\Role\UserController@store']);
     Route::post('/role/user/update/{id}', ['as' => 'api.role.user.update', 'uses' => 'Api\Role\UserController@update']);
     Route::post('/role/user/delete/{id}', ['as' => 'api.role.user.delete', 'uses' => 'Api\Role\UserController@delete']);
+
+    //  角色管理路由
+    Route::post('/role/role/store/{id}', ['as' => 'api.role.role.store', 'uses' => 'Api\Role\RoleController@store']);
+    Route::post('/role/role/update/{id}', ['as' => 'api.role.role.update', 'uses' => 'Api\Role\RoleController@update']);
+    Route::post('/role/role/delete/{id}', ['as' => 'api.role.role.delete', 'uses' => 'Api\Role\RoleController@delete']);
 });

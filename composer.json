@@ -65,11 +65,11 @@
         },
         "ufa": {
             "type": "git",
-            "url": "git@106.14.170.179:service/ufa.git"
+            "url": "git@github.com:xiaobei-wang/ufa.git"
         },
         "foundation": {
             "type": "git",
-            "url": "git@106.14.170.179:service/foundation.git"
+            "url": "git@github.com:xiaobei-wang/foundation.git"
         }
     }
 }

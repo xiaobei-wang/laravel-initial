@@ -17,6 +17,14 @@
             "dest": "home"
         },
         {
+            "src": "role/role/edit",
+            "dest": "role/role"
+        },
+        {
+            "src": "role/role/index",
+            "dest": "role/role"
+        },
+        {
             "src": "role/user/edit",
             "dest": "role/user"
         },

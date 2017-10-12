@@ -1,11 +1,10 @@
 <?php namespace App\Src\Role\Infra\Repository;
 
-use App\Src\Role\Domain\Interfaces\RoleInterface;
 use App\Foundation\Domain\Repository;
+use App\Src\Role\Domain\Interfaces\RoleInterface;
 use App\Src\Role\Domain\Model\RoleEntity;
 use App\Src\Role\Domain\Model\RoleSpecification;
 use App\Src\Role\Infra\Eloquent\RoleModel;
-
 
 class RoleRepository extends Repository implements RoleInterface
 {
@@ -23,18 +22,11 @@ class RoleRepository extends Repository implements RoleInterface
         }
         $model->fill(
             [
-                'name' => $role_entity->name,
-                'desc' => $role_entity->desc,
+                'name'        => $role_entity->name,
+                'permissions' => $role_entity->permissions,
             ]
         );
         $model->save();
-        if (isset($role_entity->permissions)) {
-            $model->permissions()->sync($role_entity->permissions);
-        }
-
-        if (isset($role_entity->users)) {
-            $model->users()->sync($role_entity->users);
-        }
         $role_entity->setIdentity($model->id);
     }
 
@@ -54,6 +46,7 @@ class RoleRepository extends Repository implements RoleInterface
         }
         return $this->reconstituteFromModel($model);
     }
+
 
     /**
      * @param RoleModel $model
@@ -75,20 +68,14 @@ class RoleRepository extends Repository implements RoleInterface
         return $entity;
     }
 
-    /**
-     * @param RoleSpecification $spec
-     * @param int               $per_page
-     * @return mixed
-     */
     public function search(RoleSpecification $spec, $per_page = 10)
     {
         $builder = RoleModel::query();
         if ($spec->keyword) {
-            $builder->where('name', 'like', '%' . $spec->keyword . '%');
+            $builder->where('name', 'like', '% ' . $spec->keyword . '%');
         }
 
-        $builder->orderBy('created_at', 'desc');
-
+        $builder->orderBy('role.created_at', 'desc');
         if ($spec->page) {
             $paginator = $builder->paginate($per_page, ['*'], 'page', $spec->page);
         } else {
@@ -101,41 +88,4 @@ class RoleRepository extends Repository implements RoleInterface
         return $paginator;
     }
 
-
-    /**
-     * @param int|array $ids
-     */
-    public function delete($ids)
-    {
-        $builder = RoleModel::query();
-        $builder->whereIn('id', (array)$ids);
-        $models = $builder->get();
-        foreach ($models as $model) {
-            $role_service = new RoleService();
-            $role_info = $role_service->getRoleInfo($model->id);
-
-            if (!empty($role_info['permissions'])) {
-                $model->permissions()->detach($role_info['permissions']);
-            }
-            if (!empty($role_info['users'])) {
-                $model->users()->detach($role_info['users']);
-            }
-
-            $model->delete();
-        }
-    }
-
-    /**
-     * @return \Illuminate\Support\Collection
-     */
-    public function all()
-    {
-        $collection = collect();
-        $builder = RoleModel::query();
-        $models = $builder->get();
-        foreach ($models as $model) {
-            $collection[] = $this->reconstituteFromModel($model);
-        }
-        return $collection;
-    }
 }

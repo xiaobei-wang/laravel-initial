@@ -11,8 +11,8 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@106.14.170.179:service/foundation.git",
-                "reference": "a75095ea3c8e0e202b35560f95614394854a52ca"
+                "url": "git@github.com:xiaobei-wang/foundation.git",
+                "reference": "73cc4819a2c8fbf018e22340531336e5a59a7022"
             },
             "require": {
                 "laravel/framework": "5.4.*",
@@ -46,8 +46,8 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@106.14.170.179:service/ufa.git",
-                "reference": "44f191896026f6522c6ed87a5af13c00337cade0"
+                "url": "git@github.com:xiaobei-wang/ufa.git",
+                "reference": "bc31b53438114fb94b32291266841f51431f0998"
             },
             "require": {
                 "laravel/framework": "5.4.*",

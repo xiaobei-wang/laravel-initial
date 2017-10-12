@@ -1,7 +1,6 @@
 <?php
 namespace App\Src\Role\Domain\Model;
 
-use Carbon\Carbon;
 use App\Foundation\Domain\ValueObject;
 use App\Foundation\Support\Interfaces\Validatable;
 
@@ -17,10 +16,13 @@ class RoleSpecification extends ValueObject implements Validatable
      */
     public $keyword;
 
+    public function __construct()
+    {
+
+    }
 
     public function validate()
     {
 
     }
-
 }

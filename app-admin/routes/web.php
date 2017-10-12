@@ -26,6 +26,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/role/user/edit/{id}', ['as' => 'role.user.edit', 'uses' => 'Role\UserController@edit']);
     Route::get('/role/user/set-password/{id}', ['as' => 'role.user.set-password', 'uses' => 'Role\UserController@setPassword']);
 
+    //角色管理
+    Route::get('/role/role/index', ['as' => 'role.role.index', 'uses' => 'Role\RoleController@index']);
+    Route::get('/role/role/edit/{id}', ['as' => 'role.role.edit', 'uses' => 'Role\RoleController@edit']);
+
     //文章管理
     Route::get('/article/index', ['as' => 'article.index', 'uses' => 'ArticleController@index']);
     Route::get('/article/edit/{id}', ['as' => 'article.edit', 'uses' => 'ArticleController@edit']);

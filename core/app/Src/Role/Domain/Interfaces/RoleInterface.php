@@ -11,15 +11,4 @@ interface RoleInterface extends Repository
      * @return mixed
      */
     public function search(RoleSpecification $spec, $per_page = 10);
-
-
-    /**
-     * @param int|array $ids
-     */
-    public function delete($ids);
-
-    /**
-     * @return \Illuminate\Support\Collection
-     */
-    public function all();
 }

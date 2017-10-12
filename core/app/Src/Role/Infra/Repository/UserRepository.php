@@ -27,15 +27,15 @@ class UserRepository extends Repository implements UserInterface
 
         $model->fill(
             [
-                'account'         => $user_entity->account,
-                'company_id'      => $user_entity->company_id,
-                'company_name'    => $user_entity->company_name,
-                'employee_id'     => $user_entity->employee_id,
-                'position'        => $user_entity->position,
-                'name'            => $user_entity->name,
-                'email'           => $user_entity->email,
-                'phone'           => $user_entity->phone,
-                'status'          => $user_entity->status,
+                'account'      => $user_entity->account,
+                'company_id'   => $user_entity->company_id,
+                'company_name' => $user_entity->company_name,
+                'employee_id'  => $user_entity->employee_id,
+                'position'     => $user_entity->position,
+                'name'         => $user_entity->name,
+                'email'        => $user_entity->email,
+                'phone'        => $user_entity->phone,
+                'status'       => $user_entity->status,
             ]
         );
         $model->save();
@@ -114,24 +114,8 @@ class UserRepository extends Repository implements UserInterface
     public function search(UserSpecification $spec, $per_page = 10)
     {
         $builder = UserModel::query();
-        if ($spec->keyword && $spec->search_type) {
-            $user_search_column = UserSearchType::acceptableEnumColumns();
-            $builder->where($user_search_column[$spec->search_type], 'like', '%' . $spec->keyword . '%');
-        }
-
-        if ($spec->created_user_id) {
-            $builder->where('created_user_id', $spec->created_user_id);
-        }
-
-        if ($spec->type) {
-            $builder->where('type', $spec->type);
-        }
-
-        if ($spec->depart_id) {
-            $builder->leftJoin('user_depart', function ($join) {
-                $join->on('user_depart.user_id', '=', 'user.id');
-            });
-            $builder->where('user_depart.depart_id', $spec->depart_id);
+        if ($spec->keyword) {
+            $builder->where('company_name', 'like', '%' . $spec->keyword . '%');
         }
 
         $builder->orderBy('user.created_at', 'desc');

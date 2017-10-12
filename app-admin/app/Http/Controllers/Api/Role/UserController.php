@@ -4,9 +4,9 @@ namespace App\Admin\Http\Controllers\Api\Role;
 
 use App\Admin\Http\Controllers\BaseController;
 use Illuminate\Http\Request;
-use App\Admin\Src\Forms\User\UserStoreForm;
+use App\Admin\Src\Forms\Role\User\UserStoreForm;
 use App\Src\Role\Infra\Repository\UserRepository;
-use App\Admin\Src\Forms\User\UserDeleteForm;
+use App\Admin\Src\Forms\Role\User\UserDeleteForm;
 
 class UserController extends BaseController
 {

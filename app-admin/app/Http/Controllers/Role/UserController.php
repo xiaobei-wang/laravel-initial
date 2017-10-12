@@ -4,8 +4,8 @@ namespace App\Admin\Http\Controllers\Role;
 
 use App\Admin\Http\Controllers\BaseController;
 use Illuminate\Http\Request;
-use App\Admin\Src\Forms\User\UserSearchForm;
-use App\Service\User\UserService;
+use App\Admin\Src\Forms\Role\User\UserSearchForm;
+use App\Service\Role\User\UserService;
 use App\Src\Role\Domain\Model\UserSpecification;
 
 class UserController extends BaseController
@@ -32,7 +32,7 @@ class UserController extends BaseController
             $user_service = new UserService();
             $data = $user_service->getUserInfo($id);
         }
-        
+
         return view('pages.role.user.edit', $data);
     }
 

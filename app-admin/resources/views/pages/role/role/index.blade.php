@@ -1,9 +1,9 @@
 <?php
 ufa()->extCss([
-    'role/user/index'
+    'role/role/index'
 ]);
 ufa()->extJs([
-    'role/user/index',
+    'role/role/index',
 ]);
 ?>
 @extends('layouts.master')
@@ -13,7 +13,7 @@ ufa()->extJs([
         <div class="content-box">
             <div class="button-box">
                 <div class="add">
-                    <a href="{{route('role.user.edit',['id'=>0])}}" class="button add-btn">添加用户</a>
+                    <a href="{{route('role.role.edit',['id'=>0])}}" class="button add-btn">添加角色</a>
                 </div>
             </div>
 
@@ -27,14 +27,15 @@ ufa()->extJs([
                     </p>
                 @endif
 
-                <form method="GET" action="" id="">
+                <form method="GET">
                     <div class="row">
                         <div class="col-xs-6 col-sm-6 col-md-4">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <label for="right-label">关键字：</label>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
-                                <input type="text" name="keyword" value="{{$appends['keyword'] or ''}}" placeholder="请输入公司名称"/>
+                                <input type="text" name="keyword" value="{{$appends['keyword'] or ''}}"
+                                       placeholder="请输入角色名称"/>
                             </div>
                         </div>
                     </div>
@@ -52,13 +53,8 @@ ufa()->extJs([
                     <thead>
                     <tr>
                         <th width="5%">编号</th>
-                        <th width="10%">账号</th>
-                        <th width="20%">公司名称</th>
-                        <th width="15%">职位</th>
-                        <th width="10%">姓名</th>
-                        <th width="10%">手机号</th>
-                        <th width="10%">邮箱</th>
-                        <th width="10%">用户角色</th>
+                        <th width="10%">角色名称</th>
+                        <th width="10%">角色权限</th>
                         <th width="10%">操作</th>
                     </tr>
                     </thead>
@@ -66,16 +62,11 @@ ufa()->extJs([
                     @foreach(($items ?? []) as $item)
                         <tr>
                             <th scope="row">{{$item['id'] or 0}}</th>
-                            <td>{{$item['account'] or ''}}</td>
-                            <td>{{$item['company_name'] or ''}}</td>
-                            <td>{{$item['position'] or ''}}</td>
                             <td>{{$item['name'] or ''}}</td>
-                            <td>{{$item['phone'] or ''}}</td>
-                            <td>{{$item['email'] or ''}}</td>
-                            <td>{{$item['roles'][0]['name'] or ''}}</td>
+                            <td>{{$item['permission_names'] or ''}}</td>
                             <td>
                                 <a title="编辑" class="icon-edit"
-                                   href="{{route('role.user.edit',['id'=>$item['id'] ?? 0])}}">
+                                   href="{{route('role.role.edit',['id'=>$item['id'] ?? 0])}}">
                                     <i class="iconfont">编辑</i>
                                 </a>
                                 <a title="删除" class="delete" data-id="{{$item['id']}}">
