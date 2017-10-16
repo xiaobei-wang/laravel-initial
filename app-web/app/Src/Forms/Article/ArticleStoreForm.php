@@ -4,7 +4,7 @@ namespace App\Web\Src\Forms\Article;
 
 
 use App\Web\Src\Forms\Form;
-use App\Service\Article\ArticleService;
+use App\Service\Article\NoticeService;
 use App\Src\Article\Domain\Model\ArticleEntity;
 use App\Src\Article\Infra\Repository\ArticleRepository;
 

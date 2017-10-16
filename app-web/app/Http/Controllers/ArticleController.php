@@ -3,7 +3,7 @@
 namespace App\Web\Http\Controllers;
 
 use App\Web\Http\Controllers\BaseController;
-use App\Service\Article\ArticleService;
+use App\Service\Article\NoticeService;
 use App\Src\Article\Domain\Model\ArticleSpecification;
 use App\Web\Src\Forms\Article\ArticleSearchForm;
 use Illuminate\Http\Request;
@@ -14,7 +14,7 @@ class ArticleController extends BaseController
     public function index(Request $request, ArticleSearchForm $form)
     {
         $data = [];
-        $article_service = new ArticleService();
+        $article_service = new NoticeService();
         $form->validate($request->all());
         $data = $article_service->getArticleList($form->article_specification, 20);
         $appends = $this->getAppends($form->article_specification);
@@ -31,7 +31,7 @@ class ArticleController extends BaseController
     {
         $data = [];
         if (!empty($id)) {
-            $article_service = new ArticleService();
+            $article_service = new NoticeService();
             $data = $article_service->getArticleInfo($id);
         }
         return $this->view('pages.article.detail', $data);
@@ -41,7 +41,7 @@ class ArticleController extends BaseController
     {
         $data = [];
         if (!empty($id)) {
-            $article_service = new ArticleService();
+            $article_service = new NoticeService();
             $data = $article_service->getArticleInfo($id);
         }
         return $this->view('pages.article.edit', $data);

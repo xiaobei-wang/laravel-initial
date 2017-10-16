@@ -22,7 +22,7 @@ ufa()->addParam([
                 @endif
             </div>
 
-            <form class="form-horizontal" id="form" onsubmit="return false" style="width:500px;">
+            <form class="form-horizontal" id="form" onsubmit="return false">
                 <div class="form-group">
                     <label class="col-sm-2 control-label">角色名称</label>
                     <div class="col-sm-10">

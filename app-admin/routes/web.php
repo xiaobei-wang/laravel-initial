@@ -33,4 +33,8 @@ Route::group(['middleware' => 'auth'], function () {
     //文章管理
     Route::get('/article/index', ['as' => 'article.index', 'uses' => 'ArticleController@index']);
     Route::get('/article/edit/{id}', ['as' => 'article.edit', 'uses' => 'ArticleController@edit']);
+
+    //通知管理
+    Route::get('/notice/index', ['as' => 'notice.index', 'uses' => 'NoticeController@index']);
+    Route::get('/notice/edit/{id}', ['as' => 'notice.edit', 'uses' => 'NoticeController@edit']);
 });

@@ -15,6 +15,12 @@ $menus = [
             'article.index',
             'article.edit'
         ]
+    ],
+    '通知管理' => [
+        '通知列表' => [
+            'notice.index',
+            'notice.edit'
+        ]
     ]
 ];
 
@@ -33,7 +39,7 @@ $url_name = request()->route()->getName();
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="/admin/permissions">
+                        <a href="">
                             <i class="fa fa-circle-o"></i> 权限管理
                         </a>
                     </li>
@@ -61,15 +67,17 @@ $url_name = request()->route()->getName();
                     </li>
                 </ul>
             </li>
-            <li class="active treeview">
-                <a href="/admin/topics">
-                    <i class="fa fa-dashboard"></i> <span>专题管理</span>
-                </a>
-            </li>
-            <li class="active treeview">
-                <a href="/admin/notices">
+            <li class="treeview @if(in_array($url_name,$menus['通知管理']) ) active @endif">
+                <a href="{{route('notice.index')}}">
                     <i class="fa fa-dashboard"></i> <span>通知管理</span>
                 </a>
+                <ul class="treeview-menu">
+                    <li @if(in_array($url_name,$menus['通知管理']['通知列表']) ) class="active" @endif>
+                        <a href="{{route('notice.index')}}">
+                            <i class="fa fa-circle-o"></i> 通知列表
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </section>

@@ -17,6 +17,14 @@
             "dest": "home"
         },
         {
+            "src": "notice/edit",
+            "dest": "notice"
+        },
+        {
+            "src": "notice/index",
+            "dest": "notice"
+        },
+        {
             "src": "role/role/edit",
             "dest": "role/role"
         },

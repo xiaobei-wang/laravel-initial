@@ -30,4 +30,9 @@ Route::group([], function () {
     Route::post('/role/role/store/{id}', ['as' => 'api.role.role.store', 'uses' => 'Api\Role\RoleController@store']);
     Route::post('/role/role/update/{id}', ['as' => 'api.role.role.update', 'uses' => 'Api\Role\RoleController@update']);
     Route::post('/role/role/delete/{id}', ['as' => 'api.role.role.delete', 'uses' => 'Api\Role\RoleController@delete']);
+
+    //  通知管理路由
+    Route::post('/notice/store/{id}', ['as' => 'api.notice.store', 'uses' => 'Api\NoticeController@store']);
+    Route::post('/notice/update/{id}', ['as' => 'api.notice.update', 'uses' => 'Api\NoticeController@update']);
+    Route::post('/notice/delete/{id}', ['as' => 'api.notice.delete', 'uses' => 'Api\NoticeController@delete']);
 });

@@ -40,7 +40,6 @@ class ArticleRepository extends Repository implements ArticleInterface
             return null;
         }
         return $this->reconstituteFromModel($model);
-
     }
 
 
