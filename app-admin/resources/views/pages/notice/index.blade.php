@@ -29,16 +29,6 @@ ufa()->extJs([
                     <div class="row">
                         <div class="col-xs-6 col-sm-6 col-md-4">
                             <div class="col-xs-6 col-sm-6 col-md-6">
-                                <label for="right-label">发送者：</label>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <input type="text" name="from" value="{{$appends['from'] or ''}}"
-                                       placeholder="请输入发送者关键字"/>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-6 col-sm-6 col-md-4">
-                            <div class="col-xs-6 col-sm-6 col-md-6">
                                 <label for="right-label">标题：</label>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">

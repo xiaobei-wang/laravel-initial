@@ -17,7 +17,7 @@ class NoticeSearchForm extends Form
     public function rules()
     {
         return [
-            'keyword' => 'string',
+            'keyword' => 'string|nullable',
         ];
 
     }

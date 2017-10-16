@@ -69,7 +69,7 @@ class NoticeRepository extends Repository implements NoticeInterfaces
     {
         $builder = NoticeModel::query();
         if ($spec->keyword) {
-            $builder->where('form', '%' . 'like' . '%');
+            $builder->where('title', 'like', '%' . $spec->keyword . '%');
         }
 
         if ($spec->page) {
